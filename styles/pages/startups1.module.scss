@@ -1,0 +1,80 @@
+.main_signup1{
+    font-size: 30px;
+    color:white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    .one{
+        width: 45%;
+        height: 100vh;
+        
+        :global {
+            .ant-image-img {
+                height: 100%;
+            }
+        }
+    }
+    .two{
+        background-color: #121212;
+        width: 55%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .signupForm {
+            width: 70%;
+            
+        }
+
+        .subTitle{
+            font-size: 0.8rem;
+        }
+        .title {
+            color: #C46D36;
+            padding-bottom: 10px;
+        }
+        .register{
+            width: 80%;
+            margin-top: 50px;
+            color: aliceblue;
+            margin-left: 7vh;
+            margin-right: auto;
+            height: 48px ;
+            background-color: #C46D36;
+            border-radius: 116px;
+            text-align: center;
+            font-size: medium;
+        }
+        .register2{
+            width: 80%;
+            margin-top: 30px;
+            color: aliceblue;
+            margin-left: 8vh;
+            margin-right: auto;
+            height: 48px ;
+            background-color: #C46D36;
+            border-radius: 116px;
+            text-align: center;
+            font-size: medium;
+        }
+        .regLink{
+            color: aliceblue;
+            margin-top: 10px;
+            align-items: center;
+            text-align: center;
+            padding-top: 5px;
+        }
+    }
+    :global{
+         .ant-form-item-label>label{
+            color: rgb(255, 255, 255)!important;
+        }
+        
+    }
+
+   
+}
