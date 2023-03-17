@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import Styles from "../styles/pages/landing.module.scss";
 import { Image, Row } from "antd";
 import Marquee from "react-fast-marquee";
+import ImageSlider from "../components/ImgSlider.jsx"
 
 export default function Home() {
   return (
@@ -35,11 +36,13 @@ export default function Home() {
           </div>
         </div>
         <div className={Styles.about}>
-          <div className={Styles.aboutCarousel}></div>
+          <div className={Styles.aboutCarousel}>
+            <ImageSlider/>
+          </div>
           <div className={Styles.startups}>
             <div className={Styles.aboutStats}>
               <div className={Styles.aboutStatsItem}>
-                <div className={Styles.aboutStatsItemNumber}>100+</div>
+                <div className={Styles.aboutStatsItemNumber}>40+</div>
                 <div className={Styles.aboutStatsItemText}>Startups</div>
               </div>
               <div className={Styles.aboutStatsItem}>
@@ -47,7 +50,7 @@ export default function Home() {
                 <div className={Styles.aboutStatsItemText}>Entrepreneurs</div>
               </div>
               <div className={Styles.aboutStatsItem}>
-                <div className={Styles.aboutStatsItemNumber}>100+</div>
+                <div className={Styles.aboutStatsItemNumber}>300+</div>
                 Jobs
               </div>
             </div>
@@ -69,31 +72,29 @@ export default function Home() {
             <div className={Styles.testimonialsCarouselItem}>
               <Image src="/apos.png" alt="" preview={false}></Image>
               <div className={Styles.testimonialsCarouselItemTitle}>
-                Phasellus feugiat lacus vitae neque ornare!
+              Fostering a culture of creativity 
               </div>
               <div className={Styles.testimonialsCarouselItemText}>
-                Lorem ipsum dolor sit amet, consectet adipiscing elit. Phasellus
-                feugiat lacus vitae neque ornare, vitae libero!
+              The innovation center has not only supported our startup but also paved the way for a better future. With their guidance and expertise, we were able to explore new ideas, test them out, and bring our vision to life.
               </div>
             </div>
             <div className={Styles.testimonialsCarouselItem}>
               <Image src="/apos.png" alt="" preview={false}></Image>
               <div className={Styles.testimonialsCarouselItemTitle}>
-                Phasellus feugiat lacus vitae neque ornare!
+              Ocean of knowledge and expertise 
               </div>
               <div className={Styles.testimonialsCarouselItemText}>
-                Lorem ipsum dolor sit amet, consectet adipiscing elit. Phasellus
-                feugiat lacus vitae neque ornare, vitae libero!
+              The knowledge and expertise shared by IC have been crucial to the development of our startup. The mentorship provided by the innovation center team has helped us navigate through the challenges of entrepreneurship and has helped us stay focused on our goals.
               </div>
             </div>
             <div className={Styles.testimonialsCarouselItem}>
               <Image src="/apos.png" alt="" preview={false}></Image>
               <div className={Styles.testimonialsCarouselItemTitle}>
-                Phasellus feugiat lacus vitae neque ornare!
+              Numerous opportunities and connects
               </div>
               <div className={Styles.testimonialsCarouselItemText}>
-                Lorem ipsum dolor sit amet, consectet adipiscing elit. Phasellus
-                feugiat lacus vitae neque ornare, vitae libero!
+              I am grateful for the numerous opportunities you have provided us to connect with other startups and industry experts, helping us to expand our network and learn from others. Innovation Centre's commitment to promoting innovation and nurturing startups is truly commendable.
+
               </div>
             </div>
           </div>

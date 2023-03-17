@@ -1,5 +1,5 @@
 import Styles from "../styles/pages/startups1.module.scss";
-import { Form, Image, Input, Row, Upload,Button,Checkbox ,Select} from "antd";
+import { Form, Image, Input, Row,Button,Checkbox ,Select} from "antd";
 import { UploadOutlined } from '@ant-design/icons';
 
 const { Option } = Select;
