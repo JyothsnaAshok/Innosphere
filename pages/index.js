@@ -2,8 +2,7 @@ import Head from "next/head";
 import { Inter } from "next/font/google";
 import Styles from "../styles/pages/landing.module.scss";
 import { Image, Row } from "antd";
-
-const inter = Inter({ subsets: ["latin"] });
+import Marquee from "react-fast-marquee";
 
 export default function Home() {
   return (
@@ -17,11 +16,87 @@ export default function Home() {
       <div className={Styles.container}>
         <div className={Styles.navbar}>
           <Image src="/innosphere_logo.png" preview={false}></Image>
-
           <Row>
-            <div className={Styles.registerBtn}>Register</div>
             <div className={Styles.loginBtn}>Sign In</div>
           </Row>
+        </div>
+        <div className={Styles.hero}>
+          <div className={Styles.heroText}>
+            &quot;<span>Entrepreneurship</span> is not about having an idea,
+            it&apos;s about having the <span>courage to take action</span> on
+            that idea and turn it into a reality.&quot;
+            <Row style={{ marginTop: "3rem" }}>
+              <div className={Styles.registerBtn}>Register as Startup</div>
+              <div className={Styles.loginBtn}>Register as Student</div>
+            </Row>
+          </div>
+          <div className={Styles.heroImage}>
+            <Image src="/hero.png" preview={false}></Image>
+          </div>
+        </div>
+        <div className={Styles.about}>
+          <div className={Styles.aboutCarousel}></div>
+          <div className={Styles.startups}>
+            <div className={Styles.aboutStats}>
+              <div className={Styles.aboutStatsItem}>
+                <div className={Styles.aboutStatsItemNumber}>100+</div>
+                <div className={Styles.aboutStatsItemText}>Startups</div>
+              </div>
+              <div className={Styles.aboutStatsItem}>
+                <div className={Styles.aboutStatsItemNumber}>100+</div>
+                <div className={Styles.aboutStatsItemText}>Entrepreneurs</div>
+              </div>
+              <div className={Styles.aboutStatsItem}>
+                <div className={Styles.aboutStatsItemNumber}>100+</div>
+                Jobs
+              </div>
+            </div>
+            <div className={Styles.aboutMarq}>
+              <Marquee>
+                <Image src="/logos/1.svg" preview={false}></Image>
+                <Image src="/logos/2.svg" preview={false}></Image>
+                <Image src="/logos/3.png" preview={false}></Image>
+                <Image src="/logos/4.png" preview={false}></Image>
+                <Image src="/logos/5.png" preview={false}></Image>
+                <Image src="/logos/6.png" preview={false}></Image>
+              </Marquee>
+            </div>
+          </div>
+        </div>
+        <div className={Styles.testimonials}>
+          <div className={Styles.testimonialsTitle}>What our startups say</div>
+          <div className={Styles.testimonialsCarousel}>
+            <div className={Styles.testimonialsCarouselItem}>
+              <Image src="/apos.png" preview={false}></Image>
+              <div className={Styles.testimonialsCarouselItemTitle}>
+                Phasellus feugiat lacus vitae neque ornare!
+              </div>
+              <div className={Styles.testimonialsCarouselItemText}>
+                Lorem ipsum dolor sit amet, consectet adipiscing elit. Phasellus
+                feugiat lacus vitae neque ornare, vitae libero!
+              </div>
+            </div>
+            <div className={Styles.testimonialsCarouselItem}>
+              <Image src="/apos.png" preview={false}></Image>
+              <div className={Styles.testimonialsCarouselItemTitle}>
+                Phasellus feugiat lacus vitae neque ornare!
+              </div>
+              <div className={Styles.testimonialsCarouselItemText}>
+                Lorem ipsum dolor sit amet, consectet adipiscing elit. Phasellus
+                feugiat lacus vitae neque ornare, vitae libero!
+              </div>
+            </div>
+            <div className={Styles.testimonialsCarouselItem}>
+              <Image src="/apos.png" preview={false}></Image>
+              <div className={Styles.testimonialsCarouselItemTitle}>
+                Phasellus feugiat lacus vitae neque ornare!
+              </div>
+              <div className={Styles.testimonialsCarouselItemText}>
+                Lorem ipsum dolor sit amet, consectet adipiscing elit. Phasellus
+                feugiat lacus vitae neque ornare, vitae libero!
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>
