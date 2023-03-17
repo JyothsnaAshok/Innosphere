@@ -1,0 +1,61 @@
+.header {
+  padding: 3rem 2rem;
+  font-size: 2rem;
+  color: #232859;
+  font-weight: 500;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  .profile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 1rem;
+    font-size: 1rem;
+    background: #fff;
+    border-radius: 5px;
+    height: 2.5rem;
+    padding: 0rem 0.2rem;
+    width: 10rem;
+    margin-left: 1rem;
+    cursor: pointer;
+    // add a very light shadow
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+
+    .name {
+      margin-left: 0.5rem;
+    }
+  }
+}
+
+.sidebarItems {
+  :global {
+    .ant-menu-light.ant-menu-root.ant-menu-inline,
+    :where(
+        .css-dev-only-do-not-override-ph9edi
+      ).ant-menu-light.ant-menu-root.ant-menu-vertical {
+      background: rgba(26, 26, 26, 1);
+      color: rgba(255, 255, 255, 0.4);
+    }
+    .ant-menu-item-selected {
+      color: #fff !important;
+      background: none;
+    }
+    .ant-layout-sider-trigger {
+      background: none !important;
+      color: #fff;
+    }
+
+    .ant-menu-item {
+      margin: 1rem 0;
+
+      &:hover {
+        color: #fff !important;
+      }
+    }
+  }
+}

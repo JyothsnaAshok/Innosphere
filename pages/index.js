@@ -15,7 +15,7 @@ export default function Home() {
       </Head>
       <div className={Styles.container}>
         <div className={Styles.navbar}>
-          <Image src="/innosphere_logo.png" preview={false}></Image>
+          <Image src="/innosphere_logo.png" alt="" preview={false}></Image>
           <Row>
             <div className={Styles.loginBtn}>Sign In</div>
           </Row>
@@ -31,7 +31,7 @@ export default function Home() {
             </Row>
           </div>
           <div className={Styles.heroImage}>
-            <Image src="/hero.png" preview={false}></Image>
+            <Image src="/hero.png" alt="" preview={false}></Image>
           </div>
         </div>
         <div className={Styles.about}>
@@ -53,12 +53,12 @@ export default function Home() {
             </div>
             <div className={Styles.aboutMarq}>
               <Marquee>
-                <Image src="/logos/1.svg" preview={false}></Image>
-                <Image src="/logos/2.svg" preview={false}></Image>
-                <Image src="/logos/3.png" preview={false}></Image>
-                <Image src="/logos/4.png" preview={false}></Image>
-                <Image src="/logos/5.png" preview={false}></Image>
-                <Image src="/logos/6.png" preview={false}></Image>
+                <Image src="/logos/1.svg" alt="" preview={false}></Image>
+                <Image src="/logos/2.svg" alt="" preview={false}></Image>
+                <Image src="/logos/3.png" alt="" preview={false}></Image>
+                <Image src="/logos/4.png" alt="" preview={false}></Image>
+                <Image src="/logos/5.png" alt="" preview={false}></Image>
+                <Image src="/logos/6.png" alt="" preview={false}></Image>
               </Marquee>
             </div>
           </div>
@@ -67,7 +67,7 @@ export default function Home() {
           <div className={Styles.testimonialsTitle}>What our startups say</div>
           <div className={Styles.testimonialsCarousel}>
             <div className={Styles.testimonialsCarouselItem}>
-              <Image src="/apos.png" preview={false}></Image>
+              <Image src="/apos.png" alt="" preview={false}></Image>
               <div className={Styles.testimonialsCarouselItemTitle}>
                 Phasellus feugiat lacus vitae neque ornare!
               </div>
@@ -77,7 +77,7 @@ export default function Home() {
               </div>
             </div>
             <div className={Styles.testimonialsCarouselItem}>
-              <Image src="/apos.png" preview={false}></Image>
+              <Image src="/apos.png" alt="" preview={false}></Image>
               <div className={Styles.testimonialsCarouselItemTitle}>
                 Phasellus feugiat lacus vitae neque ornare!
               </div>
@@ -87,7 +87,7 @@ export default function Home() {
               </div>
             </div>
             <div className={Styles.testimonialsCarouselItem}>
-              <Image src="/apos.png" preview={false}></Image>
+              <Image src="/apos.png" alt="" preview={false}></Image>
               <div className={Styles.testimonialsCarouselItemTitle}>
                 Phasellus feugiat lacus vitae neque ornare!
               </div>
