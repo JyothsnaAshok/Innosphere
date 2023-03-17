@@ -1,0 +1,30 @@
+.container {
+  background-color: #121212;
+  min-height: 100vh;
+
+  .navbar {
+    padding: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .registerBtn {
+      background-color: #fff;
+      color: #c46d36;
+      width: auto;
+      height: fit-content;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      margin-right: 1rem;
+    }
+    .loginBtn {
+      background-color: #c46d36;
+      color: #fff;
+      width: auto;
+      height: fit-content;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+  }
+}
