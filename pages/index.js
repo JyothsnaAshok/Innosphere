@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import Styles from "../styles/pages/landing.module.scss";
 import { Image, Row } from "antd";
 import Marquee from "react-fast-marquee";
-import ImageSlider from "../components/ImgSlider.jsx"
+import ImageSlider from "../components/ImgSlider.jsx";
 
 export default function Home() {
   return (
@@ -37,7 +37,7 @@ export default function Home() {
         </div>
         <div className={Styles.about}>
           <div className={Styles.aboutCarousel}>
-            <ImageSlider/>
+            <ImageSlider />
           </div>
           <div className={Styles.startups}>
             <div className={Styles.aboutStats}>
@@ -72,29 +72,39 @@ export default function Home() {
             <div className={Styles.testimonialsCarouselItem}>
               <Image src="/apos.png" alt="" preview={false}></Image>
               <div className={Styles.testimonialsCarouselItemTitle}>
-              Fostering a culture of creativity 
+                Fostering a culture of creativity
               </div>
               <div className={Styles.testimonialsCarouselItemText}>
-              The innovation center has not only supported our startup but also paved the way for a better future. With their guidance and expertise, we were able to explore new ideas, test them out, and bring our vision to life.
+                The innovation center has not only supported our startup but
+                also paved the way for a better future. With their guidance and
+                expertise, we were able to explore new ideas, test them out, and
+                bring our vision to life.
               </div>
             </div>
             <div className={Styles.testimonialsCarouselItem}>
               <Image src="/apos.png" alt="" preview={false}></Image>
               <div className={Styles.testimonialsCarouselItemTitle}>
-              Ocean of knowledge and expertise 
+                Ocean of knowledge and expertise
               </div>
               <div className={Styles.testimonialsCarouselItemText}>
-              The knowledge and expertise shared by IC have been crucial to the development of our startup. The mentorship provided by the innovation center team has helped us navigate through the challenges of entrepreneurship and has helped us stay focused on our goals.
+                The knowledge and expertise shared by IC have been crucial to
+                the development of our startup. The mentorship provided by the
+                innovation center team has helped us navigate through the
+                challenges of entrepreneurship and has helped us stay focused on
+                our goals.
               </div>
             </div>
             <div className={Styles.testimonialsCarouselItem}>
               <Image src="/apos.png" alt="" preview={false}></Image>
               <div className={Styles.testimonialsCarouselItemTitle}>
-              Numerous opportunities and connects
+                Numerous opportunities and connects
               </div>
               <div className={Styles.testimonialsCarouselItemText}>
-              I am grateful for the numerous opportunities you have provided us to connect with other startups and industry experts, helping us to expand our network and learn from others. Innovation Centre's commitment to promoting innovation and nurturing startups is truly commendable.
-
+                I am grateful for the numerous opportunities you have provided
+                us to connect with other startups and industry experts, helping
+                us to expand our network and learn from others. Innovation
+                Centre&apos;s commitment to promoting innovation and nurturing
+                startups is truly commendable.
               </div>
             </div>
           </div>

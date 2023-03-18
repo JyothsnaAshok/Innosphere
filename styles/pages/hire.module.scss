@@ -1,0 +1,11 @@
+.container {
+  color: #fff !important;
+  width: 100%;
+  padding: 2rem;
+
+  .card {
+    background-color: rgba($color: #000, $alpha: 0.1);
+    width: 100%;
+    padding: 2rem;
+  }
+}

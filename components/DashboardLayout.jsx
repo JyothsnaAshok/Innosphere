@@ -47,28 +47,28 @@ function getItem(label, key, icon, children) {
 const navItems = [
   getItem(<Link href="/startup">Dashboard</Link>, "/startup", <HomeOutlined />),
   getItem(
-    <Link href="/company/benefits">IC Services</Link>,
-    "/company/benefits",
+    <Link href="/startup/icServices">IC Services</Link>,
+    "/startup/icServices",
     <MdMiscellaneousServices />
   ),
   getItem(
-    <Link href="/company/benefits">Mentorship</Link>,
-    "/company/benefits",
+    <Link href="/startup/mentorship">Mentorship</Link>,
+    "/startup/mentorship",
     <AppstoreOutlined />
   ),
   getItem(
-    <Link href="/company/employees">Hire Talent</Link>,
-    "/company/employees",
+    <Link href="/startup/jobs">Hire Talent</Link>,
+    "/startup/jobs",
     <TeamOutlined />
   ),
   getItem(
-    <Link href="/company/claims">Feedback</Link>,
-    "/company/claims",
+    <Link href="/startup/feedback">Feedback</Link>,
+    "/startup/feedback",
     <AiOutlineMail />
   ),
   getItem(
-    <Link href="/company/profile">Progress</Link>,
-    "/company/profile",
+    <Link href="/startup/progress">Progress</Link>,
+    "/startup/progress",
     <AiOutlineLineChart />
   ),
 ];
@@ -154,9 +154,9 @@ export default function DashboardLayout({ children, title }) {
       <Layout className="site-layout">
         <Content
           style={{
-            marginLeft: collapsed ? 80 : 200,
+            marginLeft: collapsed ? 80 : 210,
             color: "#000",
-            background: "rgba(18, 18, 18, 1)",
+            background: "#F9F9FE",
           }}
         >
           <div
