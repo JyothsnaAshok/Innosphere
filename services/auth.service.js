@@ -69,3 +69,32 @@ export const getFeedback = async () => {
   });
   return response.data;
 };
+
+export const getServices = async () => {
+  const response = await axios.get(`${API_URL}/getPastServices`, {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  });
+  return response.data;
+};
+
+export const getAllHirings = async () => {
+  const response = await axios.get(`${API_URL}/getAllHiring`, {});
+  return response.data;
+};
+export const postServices = async (values) => {
+  const Options = {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  };
+  const response = await axios.post(
+    `${API_URL}/insertServices`,
+    values,
+    Options
+  );
+  return response.data;
+};
+

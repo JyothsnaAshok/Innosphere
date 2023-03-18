@@ -4,11 +4,15 @@ import ImgSlider from "@/components/ImgSlider";
 import { Space, Table, Tag } from "antd";
 import { Button, Modal } from "antd";
 import { useState } from "react";
+import { getServices } from "@/services/auth.service";
+
 
 export default function IcServices() {
+  const { data, isLoading, isError } = useQuery("services", getServices);
   const [open, setOpen] = useState(false);
   const [confirmLoading, setConfirmLoading] = useState(false);
   const [modalText, setModalText] = useState("Content of the modal");
+ 
   const showModal = () => {
     setOpen(true);
   };
@@ -24,18 +28,18 @@ export default function IcServices() {
     console.log("Clicked cancel button");
     setOpen(false);
   };
-
+  console.log(data);
   const columns = [
     {
       title: "Request ID",
-      dataIndex: "Request ID",
-      key: "Request ID",
+      dataIndex: "service_id",
+      key: "service_id",
       width: 50,
     },
     {
-      title: "Past services",
-      dataIndex: "past services",
-      key: "past services",
+      title: "Date & Time",
+      dataIndex: "date_time",
+      key: "date_time",
       width: 150,
     },
     {
@@ -48,46 +52,39 @@ export default function IcServices() {
       title: "Status",
       key: "status",
       dataIndex: "status",
-      render: (_, { tags }) => (
+      render: (record) => (
+        
         <>
-          {tags.map((tag) => {
-            let color = tag == "pending" ? "geekblue" : "green";
-            if (tag === "rejected") {
-              color = "volcano";
-            }
-            return (
-              <Tag color={color} key={tag}>
-                {tag.toUpperCase()}
+              <Tag color={record?.status == null ? "blue" : "red"} >
+                {record?.status === null ? "Approved" : "Pending" }
               </Tag>
-            );
-          })}
         </>
       ),
     },
   ];
-  const data = [
-    {
-      key: "1",
-      name: "John Brown",
-      age: 32,
-      address: "New York No. 1 Lake Park",
-      tags: ["nice", "developer"],
-    },
-    {
-      key: "2",
-      name: "Jim Green",
-      age: 42,
-      address: "London No. 1 Lake Park",
-      tags: ["loser"],
-    },
-    {
-      key: "3",
-      name: "Joe Black",
-      age: 32,
-      address: "Sydney No. 1 Lake Park",
-      tags: ["cool", "teacher"],
-    },
-  ];
+  // const data = [
+  //   {
+  //     key: "1",
+  //     name: "John Brown",
+  //     age: 32,
+  //     address: "New York No. 1 Lake Park",
+  //     tags: ["nice", "developer"],
+  //   },
+  //   {
+  //     key: "2",
+  //     name: "Jim Green",
+  //     age: 42,
+  //     address: "London No. 1 Lake Park",
+  //     tags: ["loser"],
+  //   },
+  //   {
+  //     key: "3",
+  //     name: "Joe Black",
+  //     age: 32,
+  //     address: "Sydney No. 1 Lake Park",
+  //     tags: ["cool", "teacher"],
+  //   },
+  // ];
 
   return (
     <>
@@ -115,7 +112,7 @@ export default function IcServices() {
               <p>{modalText}</p>
             </Modal>
             <div className={Styles.pastServices}>
-              <Table columns={columns} dataSource={data} />
+              <Table columns={columns} dataSource={data?.serviceHistory} />
             </div>
           </div>
         </DashboardLayout>

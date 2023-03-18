@@ -1,4 +1,25 @@
-.radioBut{
-    color: aliceblue;
-    margin-left: 10vw;
+
+
+.mainContainer{
+    .radioBut{
+        color: aliceblue;
+        margin-left: 10vw;
+        font-size: x-large;
+    }
+
+    :global{
+        .ant-timeline-item{
+            font-size: 1.4rem;
+            margin-left: 10px;
+            margin-top:30px ;
+            
+        }
+        .ant-timeline-item-head{
+            height: 15px;
+            width: 15px;
+            margin-left: 20px;
+            margin-right: 20px;
+            
+        } 
+    }
 }

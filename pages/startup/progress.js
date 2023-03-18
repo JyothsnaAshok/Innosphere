@@ -9,14 +9,17 @@ function progress() {
       setMode(e.target.value);
     };
   return (
-   <div>
+   <div className={Styles.mainContainer}>
      <DashboardLayout title="progress">
      <Radio.Group
         onChange={onChange}
         value={mode}
         style={{
           marginBottom: 20,
-          marginLeft: 40,
+          marginLeft: "auto",
+          marginRight: "auto",
+          alignItems:"center",
+          justifyContent:"center"
         }}
       >
         <Radio value="left" className={Styles.radioBut}>Left</Radio>
@@ -37,12 +40,26 @@ function progress() {
             children: 'Solve initial network problems',
           },
           {
+            label: '2015-09-01',
             children: 'Technical testing',
           },
           {
             label: '2015-09-01 09:12:11',
             children: 'Network problems being solved',
           },
+          {
+            label: '2015-09-01 09:12:11',
+            children: 'Network problems being solved',
+          },
+          {
+            label: '2015-09-01 09:12:11',
+            children: 'Network problems being solved',
+          },
+          {
+            label: '2015-09-01 09:12:11',
+            children: 'Network problems being solved',
+          },
+
         ]}/>
      </DashboardLayout>
    </div>

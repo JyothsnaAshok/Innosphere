@@ -27,8 +27,8 @@ export default function Home() {
             it&apos;s about having the <span>courage to take action</span> on
             that idea and turn it into a reality.&quot;
             <Row style={{ marginTop: "3rem" }}>
-              <div className={Styles.registerBtn}>Register as Startup</div>
-              <div className={Styles.loginBtn}>Register as Student</div>
+              <div className={Styles.registerBtn}> <a href="/startup-signup">Register as Startup</a> </div>
+              <div className={Styles.loginBtn}><a href="/student-signup">Register as Student</a></div>
             </Row>
           </div>
           <div className={Styles.heroImage}>
@@ -55,7 +55,7 @@ export default function Home() {
               </div>
             </div>
             <div className={Styles.aboutMarq}>
-              <Marquee>
+              <Marquee speed={"80"}>
                 <Image src="/logos/1.svg" alt="" preview={false}></Image>
                 <Image src="/logos/2.svg" alt="" preview={false}></Image>
                 <Image src="/logos/3.png" alt="" preview={false}></Image>
@@ -75,10 +75,7 @@ export default function Home() {
                 Fostering a culture of creativity
               </div>
               <div className={Styles.testimonialsCarouselItemText}>
-                The innovation center has not only supported our startup but
-                also paved the way for a better future. With their guidance and
-                expertise, we were able to explore new ideas, test them out, and
-                bring our vision to life.
+              The innovation center has not only supported our startup but also paved the way for a better future. With their guidance and expertise, we were able to explore new ideas, test them out, and bring our vision to life.We thank them for the same and expect to return too.
               </div>
             </div>
             <div className={Styles.testimonialsCarouselItem}>
