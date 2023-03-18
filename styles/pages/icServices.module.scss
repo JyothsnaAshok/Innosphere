@@ -1,0 +1,32 @@
+.mainContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    .Carousel{
+        height: 50%;
+        width: 80%;
+        padding-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        align-items: center;
+        justify-content: center;
+        display: flexbox;
+        margin: auto;
+        }
+       .apply{
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        flex-direction: column;
+       }
+       .pastServices{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10vh;
+       
+       }
+}
