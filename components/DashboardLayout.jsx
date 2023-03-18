@@ -163,7 +163,7 @@ export default function DashboardLayout({ children, title }) {
             style={{
               padding: 40,
               display: "flex",
-              flexDirection: "row",
+              flexDirection: "column",
               minHeight: 360,
             }}
           >

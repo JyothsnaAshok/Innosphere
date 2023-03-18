@@ -19,12 +19,14 @@ function progress() {
           marginLeft: 40,
         }}
       >
-        <Radio value="left">Left</Radio>
-        <Radio value="right">Right</Radio>
-        <Radio value="alternate">Alternate</Radio>
+        <Radio value="left" className={Styles.radioBut}>Left</Radio>
+        <Radio value="right" className={Styles.radioBut}>Right</Radio>
+        <Radio value="alternate" className={Styles.radioBut}>Alternate</Radio>
       </Radio.Group>
       <Timeline
         mode={mode}
+        color={"aliceblue"}
+        style={{marginTop:"20px", alignItems:"center", justifyContent:"center",color:"aliceblue"}}
         items={[
           {
             label: '2015-09-01',
