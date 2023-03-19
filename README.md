@@ -14,25 +14,10 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+The proposed project aims to develop a platform for students and registered startups of an Innovation Centre to provide updates, share their accomplishments, connect with developers, professors, and companies. The platform will serve as a central hub for innovation and entrepreneurship, allowing students and startups to showcase their projects, highlight their achievements, and connect with potential partners and mentors. Registered startups will have access to a dashboard where they can manage their profile, post updates, and connect with potential investors and customers. Students will be able to create profiles, explore startup projects, and connect with mentors and professors to gain insights and support for their own projects.![image](https://user-images.githubusercontent.com/87925991/226148797-fa31f4a8-dfdc-4904-a643-2f7aa843f9df.png)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Video Link : https://drive.google.com/drive/folders/1vr6yxR17YdIu_cImrWmingYw68fjVjgV?usp=sharing
+Backend Link : https://github.com/sanketkar24/AppLabServer
+Figma Branding Link : https://www.figma.com/file/z4CpmipbEMJs8otT4fo6fh/Untitled?node-id=0-1&t=z3EhBq9VtpJMys68-0
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
