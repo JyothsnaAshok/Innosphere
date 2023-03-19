@@ -13,9 +13,12 @@ import { useState } from "react";
 import { getPastHiring, postJobHiring } from "@/services/auth.service";
 import { useQuery, useMutation, useQueryClient } from "react-query";
 import moment from "moment";
+import { useRouter } from "next/router";
 
 export default function Hire() {
   const queryClient = useQueryClient();
+
+  const router = useRouter();
 
   const {
     data: pastJobs,
@@ -91,8 +94,8 @@ export default function Hire() {
             dataSource={pastJobs?.pastHiring}
             renderItem={(item) => (
               <>
-                {console.log(item)}
                 <List.Item
+                  onClick={() => router.push(`/startup/jobs/${item.post_id}`)}
                   style={{
                     boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.1)",
                     margin: "1rem 0",

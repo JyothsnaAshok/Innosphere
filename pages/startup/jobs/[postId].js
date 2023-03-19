@@ -3,8 +3,22 @@ import { Descriptions, Space, Table, Tag } from "antd";
 import Head from "next/head";
 import React from "react";
 import Styles from "styles/pages/hire.module.scss";
+import { getApplicants } from "@/services/auth.service";
+import { useQuery } from "react-query";
 
 export default function Post({ postId }) {
+  console.log(postId);
+
+  // postId as number from string
+  const postIdNum = parseInt(postId);
+
+  // make a useMutation to get the applicants
+  const { data: applicants, isLoading } = useQuery("applicants", () =>
+    getApplicants(postIdNum)
+  );
+
+  console.log(applicants);
+
   const columns = [
     {
       title: "Name",

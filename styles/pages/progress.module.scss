@@ -5,6 +5,10 @@
     font-size: x-large;
   }
 
+  .addProgress {
+    background-color: #fff;
+  }
+
   :global {
     .ant-timeline-item {
       font-size: 1.4rem;
@@ -14,8 +18,7 @@
     .ant-timeline-item-head {
       height: 15px;
       width: 15px;
-      margin-left: 20px;
-      margin-right: 20px;
+      margin-left: -3px;
     }
   }
 }

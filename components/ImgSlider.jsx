@@ -2,9 +2,8 @@ import React from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import Image from "next/image";
 
-function ImageSlider() {
+function ImgSlider() {
   var settings = {
     dots: false,
     infinite: true,
@@ -17,7 +16,7 @@ function ImageSlider() {
     <>
       <Slider {...settings}>
         <div>
-          <Image
+          <img
             height={"250vh"}
             width={"80%"}
             style={{
@@ -30,7 +29,7 @@ function ImageSlider() {
           />
         </div>
         <div>
-          <Image
+          <img
             height={"250vh"}
             width={"80%"}
             style={{
@@ -44,7 +43,7 @@ function ImageSlider() {
           />
         </div>
         <div>
-          <Image
+          <img
             height={"250vh"}
             width={"80%"}
             style={{
@@ -58,7 +57,7 @@ function ImageSlider() {
           />
         </div>
         <div>
-          <Image
+          <img
             height={"250vh"}
             width={"80%"}
             style={{
@@ -76,4 +75,4 @@ function ImageSlider() {
   );
 }
 
-export default ImageSlider;
+export default ImgSlider;

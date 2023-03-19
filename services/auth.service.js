@@ -61,6 +61,25 @@ export const postJobHiring = async (values) => {
   return response.data;
 };
 
+export const getApplicants = async (postid) => {
+  console.log(postid);
+  const Options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  };
+  const response = await axios.post(
+    `${API_URL}/applicantList`,
+    {
+      post_id: postid,
+    },
+    Options
+  );
+  return response.data;
+};
+
 export const getFeedback = async () => {
   const response = await axios.get(`${API_URL}/getFeedback`, {
     headers: {
@@ -105,11 +124,30 @@ export const postApply = async (values) => {
       Authorization: `Bearer ${localStorage.getItem("token")}`,
     },
   };
-  const response = await axios.post(
-    `${API_URL}/applyJob`,
+  const response = await axios.post(`${API_URL}/applyJob`, values, Options);
+  return response.data;
+};
+
+export const addUpdate = async (values) => {
+  const Options = {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  };
+  const response = await axios.get(
+    `${API_URL}/insertUpdateMsg`,
     values,
     Options
   );
   return response.data;
 };
 
+export const getUpdates = async () => {
+  const response = await axios.get(`${API_URL}/getStartupUpdates`, {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  });
+  return response.data;
+};

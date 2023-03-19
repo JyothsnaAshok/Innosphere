@@ -7,6 +7,7 @@ import { BiUserCircle } from "react-icons/bi";
 import { MdMiscellaneousServices } from "react-icons/md";
 import { AiOutlineLineChart, AiOutlineMail } from "react-icons/ai";
 import { useQuery } from "react-query";
+import { FiLogOut } from "react-icons/fi";
 
 import {
   Avatar,
@@ -20,6 +21,7 @@ import {
   Divider,
   DatePicker,
   message,
+  Button,
 } from "antd";
 import {
   DesktopOutlined,
@@ -74,6 +76,13 @@ const navItems = [
     <AiOutlineLineChart />
   ),
 ];
+
+const onLogout = () => {
+  localStorage.removeItem("token");
+  localStorage.removeItem("user");
+  message.success("Logged out successfully");
+  window.location.href = "/";
+};
 
 export default function DashboardLayout({ children, title }) {
   const [collapsed, setCollapsed] = useState(false);
@@ -172,7 +181,13 @@ export default function DashboardLayout({ children, title }) {
             }}
           >
             <div className={Styles.dashTitle}>{title}</div>
-            <div>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+              }}
+            >
               <Avatar
                 size={40}
                 style={{
@@ -180,6 +195,13 @@ export default function DashboardLayout({ children, title }) {
                 }}
               />
               <span>{data?.val[0].name}</span>
+              <FiLogOut
+                size={20}
+                style={{
+                  marginLeft: "0.5rem",
+                }}
+                onClick={onLogout}
+              />
             </div>
           </div>
           <div

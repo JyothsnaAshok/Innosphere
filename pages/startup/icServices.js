@@ -1,17 +1,33 @@
 import DashboardLayout from "../../components/DashboardLayout";
 import Styles from "../../styles/pages/icServices.module.scss";
 import ImgSlider from "@/components/ImgSlider";
-import { Space, Table, Tag } from "antd";
+import { DatePicker, Form, Input, Space, Table, Tag } from "antd";
 import { Button, Modal } from "antd";
 import { useState } from "react";
 import { getServices } from "@/services/auth.service";
-import { useQuery } from "react-query";
+import { useQuery, useMutation, useQueryClient } from "react-query";
+import { postServices } from "@/services/auth.service";
 
 export default function IcServices() {
+  const queryClient = useQueryClient();
   const { data, isLoading, isError } = useQuery("services", getServices);
   const [open, setOpen] = useState(false);
   const [confirmLoading, setConfirmLoading] = useState(false);
   const [modalText, setModalText] = useState("Content of the modal");
+
+  const servicePostMutation = useMutation(postServices, {
+    onSuccess: () => {
+      setOpen(false);
+      setConfirmLoading(false);
+    },
+    onError: () => {
+      message.error("Something went wrong");
+    },
+  });
+  const onServicePost = async (values) => {
+    await servicePostMutation.mutateAsync(values);
+    await queryClient.invalidateQueries("pastServices");
+  };
 
   const showModal = () => {
     setOpen(true);
@@ -101,14 +117,48 @@ export default function IcServices() {
             >
               Apply for services
             </Button>
-            <Modal
-              title="Title"
-              open={open}
-              onOk={handleOk}
-              confirmLoading={confirmLoading}
-              onCancel={handleCancel}
-            >
-              <p>{modalText}</p>
+            <Modal open={open} footer={false} onCancel={() => setOpen(false)}>
+              <h2>Request for a Service</h2>
+              <Form
+                onFinish={onServicePost}
+                layout="vertical"
+                style={{
+                  marginTop: "2rem",
+                }}
+              >
+                <Form.Item name="date_time" label="Date and time">
+                  <Space direction="vertical">
+                    <DatePicker />
+                  </Space>
+                </Form.Item>
+                <Form.Item name="description" label="Description">
+                  <Input.TextArea
+                    size="large"
+                    placeholder="Description"
+                  ></Input.TextArea>
+                </Form.Item>
+
+                <Form.Item
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <Button
+                    size="large"
+                    type="primary"
+                    htmlType="submit"
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    Submit
+                  </Button>
+                </Form.Item>
+              </Form>
             </Modal>
             <div className={Styles.pastServices}>
               <Table columns={columns} dataSource={data?.serviceHistory} />
