@@ -1,5 +1,5 @@
 import React from "react";
-import DashboardLayout from "../../components/DashboardLayout";
+import DashboardLayout from "../../components/StudentDash";
 import Styles from "../../styles/pages/mentorship.module.scss";
 import { Space, Table, Tag, Typography, ellipsis } from "antd";
 import { useQuery } from "react-query";
@@ -7,7 +7,7 @@ import { getMentorDetails } from "@/services/auth.service";
 
 const { Paragraph } = Typography;
 
-function Mentorship() {
+function cofounder() {
   const { data: mentorDetails, isLoading } = useQuery(
     "mentorDetails",
     getMentorDetails
@@ -83,4 +83,4 @@ function Mentorship() {
   );
 }
 
-export default Mentorship;
+export default cofounder;

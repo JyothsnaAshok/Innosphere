@@ -98,3 +98,18 @@ export const postServices = async (values) => {
   return response.data;
 };
 
+export const postApply = async (values) => {
+  const Options = {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  };
+  const response = await axios.post(
+    `${API_URL}/applyJob`,
+    values,
+    Options
+  );
+  return response.data;
+};
+
