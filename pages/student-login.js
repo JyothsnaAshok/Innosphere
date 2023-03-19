@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { useRouter } from "next/router";
 import { useMutation, useQuery } from "react-query";
 import { loginRequest } from "@/services/auth.service";
+import Link from "next/link";
 
 function Student_login() {
   const dispatch = useDispatch();
@@ -18,6 +19,7 @@ function Student_login() {
         dispatch(login(data));
         router.push("/student");
         localStorage.setItem("token", data.token);
+        localStorage.setItem("userType", "student");
       } else {
         message.error("Invalid credentials");
       }
@@ -82,9 +84,9 @@ function Student_login() {
               </Button>
               <div className={Styles.regLink}>
                 Didn&apos;t register your startup?{" "}
-                <a style={{ color: "#C46D36" }} href="/startup-signup">
+                <Link style={{ color: "#C46D36" }} href="/startup-signup">
                   Register
-                </a>
+                </Link>
               </div>
             </Form>
           </div>

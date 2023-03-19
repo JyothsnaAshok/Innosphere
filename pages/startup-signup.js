@@ -1,9 +1,11 @@
 import Styles from "../styles/pages/startups1.module.scss";
 import { Form, Image, Input, Row, Upload, Button, Select } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
+import useAuth from "@/hooks/useAuth";
 const { Option } = Select;
 
 function Startup_signup() {
+  useAuth();
   return (
     <div>
       <div className={Styles.main_signup1}>
@@ -62,31 +64,35 @@ function Startup_signup() {
                   name="password"
                   rules={[
                     { required: true, message: "Please input your password!" },
-                  ] 
-                }
-                  style={{marginRight: "1rem", width: "47%" }}
-                
+                  ]}
+                  style={{ marginRight: "1rem", width: "47%" }}
                 >
-                  <Input.Password size="large" style={{ marginRight: "2rem", width: "100%" }}/>
+                  <Input.Password
+                    size="large"
+                    style={{ marginRight: "2rem", width: "100%" }}
+                  />
                 </Form.Item>
 
                 <Form.Item
                   label="Level"
                   style={{ marginRight: "1rem", width: "47%" }}
                 >
-                  <Select  
+                  <Select
                     placeholder="Select a option and change input text above"
-                    allowClear size="large" style={{ marginRight: "2rem", width: "100%" }}
+                    allowClear
+                    size="large"
+                    style={{ marginRight: "2rem", width: "100%" }}
                   >
                     <Option value="L0">L0 - Ideation </Option>
                     <Option value="L1">L1 - Idea Validation</Option>
-                    <Option value="L2">L2 - MVP ("ugly" prototype)</Option>
+                    <Option value="L2">
+                      L2 - MVP (&quot;ugly&quot; prototype)
+                    </Option>
                     <Option value="L3">L3 - Large Scale MVP</Option>
                     <Option value="L4">L4 - Revenue Generating</Option>
                     <Option value="L5">L5 - Funded</Option>
                   </Select>
                 </Form.Item>
-
               </Row>
 
               <Upload style={{ marginRight: "1rem", width: "100%" }}>

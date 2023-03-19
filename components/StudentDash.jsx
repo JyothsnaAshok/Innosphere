@@ -1,4 +1,4 @@
-import {React,useState} from 'react'
+import { React, useState } from "react";
 
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -6,7 +6,11 @@ import Image from "next/image";
 import Styles from "../styles/components/Sidebar.module.scss";
 import { BiUserCircle } from "react-icons/bi";
 import { MdMiscellaneousServices } from "react-icons/md";
-import { AiOutlineLineChart, AiOutlineMail , AiFillContacts} from "react-icons/ai";
+import {
+  AiOutlineLineChart,
+  AiOutlineMail,
+  AiFillContacts,
+} from "react-icons/ai";
 import { BiBriefcaseAlt2 } from "react-icons/bi";
 
 import {
@@ -47,26 +51,40 @@ function getItem(label, key, icon, children) {
 }
 
 const navItems = [
-  getItem(<Link href="/student" style={{fontSize:"1.1rem"}}>Profile</Link>, "/student", <HomeOutlined />),
   getItem(
-    <Link href="/student/hirings" style={{fontSize:"1.1rem"}}>Hirings</Link>,
+    <Link href="/student" style={{ fontSize: "1.1rem" }}>
+      Profile
+    </Link>,
+    "/student",
+    <HomeOutlined />
+  ),
+  getItem(
+    <Link href="/student/hirings" style={{ fontSize: "1.1rem" }}>
+      Hirings
+    </Link>,
     "/student/hirings",
     <MdMiscellaneousServices />
   ),
   getItem(
-    <Link href="/student/services" style={{fontSize:"1.1rem"}}>Services</Link>,
+    <Link href="/student/services" style={{ fontSize: "1.1rem" }}>
+      Services
+    </Link>,
     "/student/services",
     <BiBriefcaseAlt2 />
   ),
   getItem(
-    <Link href="/student/feedback" style={{fontSize:"1.1rem"}}>Feedback</Link>,
+    <Link href="/student/feedback" style={{ fontSize: "1.1rem" }}>
+      Feedback
+    </Link>,
     "/student/feedback",
     <AiOutlineMail />
   ),
   getItem(
-    <Link href="/student/cofounder" style={{fontSize:"1.1rem"}}>CoFounder</Link>,
+    <Link href="/student/cofounder" style={{ fontSize: "1.1rem" }}>
+      CoFounder
+    </Link>,
     "/student/cofounder",
-    <AiFillContacts/>
+    <AiFillContacts />
   ),
 ];
 
@@ -125,22 +143,21 @@ export default function StudentDash({ children, title }) {
               borderBottom: "1px solid #f0f0f0",
             }}
           >
-            <a href="/">
-            <Image  src="/logo.png" alt="logo" width={40} height={40} />
-            </a>
+            <Link href="/">
+              <Image src="/logo.png" alt="logo" width={40} height={40} />
+            </Link>
             {!collapsed && (
-                <a href="/">
-                    <span
-                style={{
-                  marginLeft: "0.5rem",
-                  fontSize: "1.4rem",
-                  color: "#fff",
-                }}
-              >
-                Innosphere
-              </span>
-                </a>
-              
+              <Link href="/">
+                <span
+                  style={{
+                    marginLeft: "0.5rem",
+                    fontSize: "1.4rem",
+                    color: "#fff",
+                  }}
+                >
+                  Innosphere
+                </span>
+              </Link>
             )}
           </div>
 

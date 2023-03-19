@@ -6,8 +6,11 @@ import { useDispatch } from "react-redux";
 import { useRouter } from "next/router";
 import { useMutation, useQuery } from "react-query";
 import { startupLoginRequest } from "@/services/auth.service";
+import useAuth from "@/hooks/useAuth";
+import Link from "next/link";
 
 function Startup_login() {
+  useAuth();
   const dispatch = useDispatch();
   const router = useRouter();
 
@@ -16,8 +19,9 @@ function Startup_login() {
       console.log(data);
       if (data.success === 1) {
         dispatch(login(data));
-        router.push("/startup");
+        router.push("/startup/icServices");
         localStorage.setItem("token", data.token);
+        localStorage.setItem("userType", "startup");
       } else {
         message.error("Invalid credentials");
       }
@@ -72,10 +76,10 @@ function Startup_login() {
                 Login
               </Button>
               <div className={Styles.regLink}>
-                Didn't register your startup?{" "}
-                <a style={{ color: "#C46D36" }} href="/startup-signup">
+                Didn&apos;t register your startup?{" "}
+                <Link style={{ color: "#C46D36" }} href="/startup-signup">
                   Register
-                </a>
+                </Link>
               </div>
             </Form>
           </div>

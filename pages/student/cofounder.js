@@ -7,7 +7,7 @@ import { getMentorDetails } from "@/services/auth.service";
 
 const { Paragraph } = Typography;
 
-function cofounder() {
+function Cofounder() {
   const { data: mentorDetails, isLoading } = useQuery(
     "mentorDetails",
     getMentorDetails
@@ -67,7 +67,7 @@ function cofounder() {
       ),
     },
   ];
-  
+
   return (
     <DashboardLayout title="Mentorship">
       <div className={Styles.tableContainer}>
@@ -83,4 +83,4 @@ function cofounder() {
   );
 }
 
-export default cofounder;
+export default Cofounder;

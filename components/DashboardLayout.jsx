@@ -6,6 +6,7 @@ import Styles from "../styles/components/Sidebar.module.scss";
 import { BiUserCircle } from "react-icons/bi";
 import { MdMiscellaneousServices } from "react-icons/md";
 import { AiOutlineLineChart, AiOutlineMail } from "react-icons/ai";
+import { useQuery } from "react-query";
 
 import {
   Avatar,
@@ -32,6 +33,7 @@ import {
   AppstoreOutlined,
   LineChartOutlined,
 } from "@ant-design/icons";
+import { getStartupDetails } from "@/services/auth.service";
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -45,7 +47,7 @@ function getItem(label, key, icon, children) {
 }
 
 const navItems = [
-  getItem(<Link href="/startup">Dashboard</Link>, "/startup", <HomeOutlined />),
+  // getItem(<Link href="/startup">Dashboard</Link>, "/startup", <HomeOutlined />),
   getItem(
     <Link href="/startup/icServices">IC Services</Link>,
     "/startup/icServices",
@@ -75,6 +77,8 @@ const navItems = [
 
 export default function DashboardLayout({ children, title }) {
   const [collapsed, setCollapsed] = useState(false);
+
+  const { data, isLoading, isError } = useQuery("startup", getStartupDetails);
 
   const router = useRouter();
   const { pathname } = router;
@@ -154,14 +158,33 @@ export default function DashboardLayout({ children, title }) {
       <Layout className="site-layout">
         <Content
           style={{
-            marginLeft: collapsed ? 80 : 210,
+            marginLeft: collapsed ? 80 : 250,
             color: "#000",
             background: "#F9F9FE",
           }}
         >
           <div
             style={{
-              padding: 40,
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              padding: "0 2rem",
+            }}
+          >
+            <div className={Styles.dashTitle}>{title}</div>
+            <div>
+              <Avatar
+                size={40}
+                style={{
+                  marginRight: "0.5rem",
+                }}
+              />
+              <span>{data?.val[0].name}</span>
+            </div>
+          </div>
+          <div
+            style={{
+              padding: 20,
               display: "flex",
               flexDirection: "column",
               minHeight: 360,

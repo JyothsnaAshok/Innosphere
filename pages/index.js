@@ -1,11 +1,41 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
 import Styles from "../styles/pages/landing.module.scss";
-import { Image, Row } from "antd";
+import { Col, Image, Row } from "antd";
 import Marquee from "react-fast-marquee";
 import ImageSlider from "../components/ImgSlider.jsx";
-
+import Lottie from "react-lottie";
+import * as animationData from "../public/network.json";
+import * as animationData1 from "../public/Innovation.json";
+import * as animationData2 from "../public/hiring.json";
+import Link from "next/link";
 export default function Home() {
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
+  const defaultOptions1 = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData1,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
+  const defaultOptions2 = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData2,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
   return (
     <>
       <Head>
@@ -18,7 +48,13 @@ export default function Home() {
         <div className={Styles.navbar}>
           <Image src="/innosphere_logo.png" alt="" preview={false}></Image>
           <Row>
-            <div className={Styles.loginBtn}>Sign In</div>
+            <div className={Styles.registerBtn}>
+              {" "}
+              <Link href="/startup-login">Startup Login</Link>{" "}
+            </div>
+            <div className={Styles.loginBtn}>
+              <Link href="/student-login">Student Login</Link>
+            </div>
           </Row>
         </div>
         <div className={Styles.hero}>
@@ -27,12 +63,22 @@ export default function Home() {
             it&apos;s about having the <span>courage to take action</span> on
             that idea and turn it into a reality.&quot;
             <Row style={{ marginTop: "3rem" }}>
-              <div className={Styles.registerBtn}> <a href="/startup-signup">Register as Startup</a> </div>
-              <div className={Styles.loginBtn}><a href="/student-signup">Register as Student</a></div>
+              <div className={Styles.registerBtn}>
+                {" "}
+                <Link href="/startup-signup">Register as Startup</Link>{" "}
+              </div>
+              <div className={Styles.loginBtn}>
+                <Link href="/student-signup">Register as Student</Link>
+              </div>
             </Row>
           </div>
           <div className={Styles.heroImage}>
-            <Image src="/hero.png" alt="" preview={false}></Image>
+            <Lottie
+              options={defaultOptions1}
+              height={400}
+              width={400}
+              style={{ margin: 0 }}
+            />
           </div>
         </div>
         <div className={Styles.about}>
@@ -66,6 +112,68 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <div className={Styles.aboutDeets}>
+          <div className={Styles.about1}>
+            <div>
+              <h1
+                style={{
+                  fontSize: "2rem",
+                  marginLeft: "2rem",
+                }}
+              >
+                Network with the right people
+              </h1>
+              <h3
+                style={{
+                  fontSize: "1.4rem",
+                  fontWeight: "400",
+                  width: "80%",
+                  marginLeft: "2rem",
+                }}
+              >
+                Great things happen when great people come together. It’s magic!
+              </h3>
+            </div>
+            <Lottie
+              options={defaultOptions}
+              height={400}
+              width={400}
+              style={{ margin: 0 }}
+            />
+          </div>
+          <div className={Styles.about2}>
+            <Lottie
+              options={defaultOptions2}
+              height={400}
+              width={400}
+              style={{ margin: 0 }}
+            />
+            <div
+              style={{
+                width: "40%",
+              }}
+            >
+              <h1
+                style={{
+                  fontSize: "2rem",
+                }}
+              >
+                Hire and Get Hired effectively
+              </h1>
+              <h3
+                style={{
+                  fontSize: "1.4rem",
+                  fontWeight: "400",
+                  width: "80%",
+                }}
+              >
+                We help you find the right talent and help you get hired by the
+                right people.
+              </h3>
+            </div>
+            {/* give me more content ideas */}
+          </div>
+        </div>
         <div className={Styles.testimonials}>
           <div className={Styles.testimonialsTitle}>What our startups say</div>
           <div className={Styles.testimonialsCarousel}>
@@ -75,7 +183,11 @@ export default function Home() {
                 Fostering a culture of creativity
               </div>
               <div className={Styles.testimonialsCarouselItemText}>
-              The innovation center has not only supported our startup but also paved the way for a better future. With their guidance and expertise, we were able to explore new ideas, test them out, and bring our vision to life.We thank them for the same and expect to return too.
+                The innovation center has not only supported our startup but
+                also paved the way for a better future. With their guidance and
+                expertise, we were able to explore new ideas, test them out, and
+                bring our vision to life.We thank them for the same and expect
+                to return too.
               </div>
             </div>
             <div className={Styles.testimonialsCarouselItem}>
@@ -106,6 +218,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <div className={Styles.footer}>INNOSPHERE</div>
       </div>
     </>
   );

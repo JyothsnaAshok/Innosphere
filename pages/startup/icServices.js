@@ -5,14 +5,14 @@ import { Space, Table, Tag } from "antd";
 import { Button, Modal } from "antd";
 import { useState } from "react";
 import { getServices } from "@/services/auth.service";
-
+import { useQuery } from "react-query";
 
 export default function IcServices() {
   const { data, isLoading, isError } = useQuery("services", getServices);
   const [open, setOpen] = useState(false);
   const [confirmLoading, setConfirmLoading] = useState(false);
   const [modalText, setModalText] = useState("Content of the modal");
- 
+
   const showModal = () => {
     setOpen(true);
   };
@@ -53,11 +53,10 @@ export default function IcServices() {
       key: "status",
       dataIndex: "status",
       render: (record) => (
-        
         <>
-              <Tag color={record?.status == null ? "blue" : "red"} >
-                {record?.status === null ? "Approved" : "Pending" }
-              </Tag>
+          <Tag color={record?.status == null ? "blue" : "red"}>
+            {record?.status === null ? "Approved" : "Pending"}
+          </Tag>
         </>
       ),
     },
@@ -89,7 +88,7 @@ export default function IcServices() {
   return (
     <>
       <div className={Styles.mainContainer}>
-        <DashboardLayout title="Mentorship">
+        <DashboardLayout title="Services">
           <div className={Styles.Carousel}>
             <ImgSlider />
           </div>

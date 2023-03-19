@@ -1,20 +1,20 @@
 import DashboardLayout from "../../components/StudentDash";
 import Styles from "../../styles/pages/icServices.module.scss";
 import ImgSlider from "@/components/ImgSlider";
-import { Space, Table, Tag, Input } from 'antd';
-import { Button, Modal, Form } from 'antd';
-import { useState } from 'react';
-import { getServices , postServices } from "@/services/auth.service";
-import { DatePicker , message} from 'antd';
+import { Space, Table, Tag, Input } from "antd";
+import { Button, Modal, Form } from "antd";
+import { useState } from "react";
+import { getServices, postServices } from "@/services/auth.service";
+import { DatePicker, message } from "antd";
 import { useQuery, useMutation, useQueryClient } from "react-query";
 
-function services() {
+function Services() {
   const queryClient = useQueryClient();
   const { data, isLoading, isError } = useQuery("services", getServices);
   const [open, setOpen] = useState(false);
   const [confirmLoading, setConfirmLoading] = useState(false);
-  const [modalText, setModalText] = useState('Content of the modal');
- 
+  const [modalText, setModalText] = useState("Content of the modal");
+
   const servicePostMutation = useMutation(postServices, {
     onSuccess: () => {
       setOpen(false);
@@ -35,7 +35,7 @@ function services() {
     setOpen(true);
   };
   const handleOk = () => {
-    setModalText('Apply here for services');
+    setModalText("Apply here for services");
     setConfirmLoading(true);
     setTimeout(() => {
       setOpen(false);
@@ -43,10 +43,10 @@ function services() {
     }, 2000);
   };
   const handleCancel = () => {
-    console.log('Clicked cancel button');
+    console.log("Clicked cancel button");
     setOpen(false);
   };
-   
+
   const columns = [
     {
       title: "Request ID",
@@ -71,11 +71,10 @@ function services() {
       key: "status",
       dataIndex: "status",
       render: (record) => (
-        
         <>
-              <Tag color={record?.status == null ? "blue" : "red"} >
-                {record?.status === null ? "Approved" : "Pending" }
-              </Tag>
+          <Tag color={record?.status == null ? "blue" : "red"}>
+            {record?.status === null ? "Approved" : "Pending"}
+          </Tag>
         </>
       ),
     },
@@ -106,69 +105,71 @@ function services() {
 
   return (
     <>
-    <div className={Styles.mainContainer}>
-     <DashboardLayout title="Mentorship">
-      <div className={Styles.Carousel}>
-      <ImgSlider/>
-      </div>
-      <div className={Styles.apply}>
-     <Button type="primary" size="large" style={{backgroundColor:"#c46d36", marginTop:"50px"}}onClick={showModal}>
-        Apply for services 
-      </Button>
-      <Modal open={open} footer={false} onCancel={() => setOpen(false)}>
-          <h2>Request for a Service</h2>
-          <Form
-            onFinish={onServicePost}
-            layout="vertical"
-            style={{
-              marginTop: "2rem",
-            }}
-          >
-            <Form.Item name="date_time" label="Date and time">
-            <Space direction="vertical">
-                   <DatePicker onChange={onChange} />
-                   </Space>
-            </Form.Item>
-            <Form.Item name="description" label="Description">
-              <Input.TextArea
-                size="large"
-                placeholder="Description"
-              ></Input.TextArea>
-            </Form.Item>
-
-            <Form.Item
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
+      <div className={Styles.mainContainer}>
+        <DashboardLayout title="Mentorship">
+          <div className={Styles.Carousel}>
+            <ImgSlider />
+          </div>
+          <div className={Styles.apply}>
+            <Button
+              type="primary"
+              size="large"
+              style={{ backgroundColor: "#c46d36", marginTop: "50px" }}
+              onClick={showModal}
             >
-              <Button
-                size="large"
-                type="primary"
-                htmlType="submit"
+              Apply for services
+            </Button>
+            <Modal open={open} footer={false} onCancel={() => setOpen(false)}>
+              <h2>Request for a Service</h2>
+              <Form
+                onFinish={onServicePost}
+                layout="vertical"
                 style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
+                  marginTop: "2rem",
                 }}
               >
-                Submit
-              </Button>
-            </Form.Item>
-          </Form>
-        </Modal>
-    <div className={Styles.pastServices}>
-    <Table columns={columns} dataSource={data?.serviceHistory} />
-    </div>
-      
-     </div>
-   </DashboardLayout>
+                <Form.Item name="date_time" label="Date and time">
+                  <Space direction="vertical">
+                    <DatePicker onChange={onChange} />
+                  </Space>
+                </Form.Item>
+                <Form.Item name="description" label="Description">
+                  <Input.TextArea
+                    size="large"
+                    placeholder="Description"
+                  ></Input.TextArea>
+                </Form.Item>
 
-     
-    </div>
+                <Form.Item
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <Button
+                    size="large"
+                    type="primary"
+                    htmlType="submit"
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    Submit
+                  </Button>
+                </Form.Item>
+              </Form>
+            </Modal>
+            <div className={Styles.pastServices}>
+              <Table columns={columns} dataSource={data?.serviceHistory} />
+            </div>
+          </div>
+        </DashboardLayout>
+      </div>
     </>
-  )
+  );
 }
 
-export default services
+export default Services;

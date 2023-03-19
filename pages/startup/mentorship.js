@@ -50,8 +50,12 @@ function Mentorship() {
       title: "Sectors",
       key: "sector",
       dataIndex: "sector",
-      render: (_, { tags }) => (
+      render: (record) => (
         <>
+          {console.log(record)}
+          {/* add a random colour tab */}
+          <Tag color="geekblue">{record}</Tag>
+
           {/* {tags.map((tag) => {
             let color = tag.length > 5 ? "geekblue" : "green";
             if (tag === "health") {
